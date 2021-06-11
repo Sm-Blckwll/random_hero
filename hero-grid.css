@@ -16,3 +16,9 @@
     }
 }
 
+.main-grid {
+    display: grid;
+    gap: 1rem;
+    min-height: 100%;
+    grid-template-columns: .01fr .98fr .01fr;
+}
