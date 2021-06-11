@@ -182,6 +182,7 @@ span {
     border-radius: 50%;
     animation: loader 5s infinite ;
   }
+  
   .loader-inner {
     vertical-align: top;
     display: inline-block;
