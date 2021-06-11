@@ -37,7 +37,7 @@
 /* eslint-disable indent, no-unused-vars, no-multiple-empty-lines, max-nested-callbacks, space-before-function-paren, quotes, comma-spacing */
 'use strict';
 
-var precacheConfig = [["android-chrome-192x192.png","fa6d1000c58fa5c708795f53e6ac4f39"],["android-chrome-256x256.png","59ec6fd98e6967af945ca8094d30b735"],["apple-touch-icon.png","74dc788b3b25d54993edd53518b028e5"],["base.css","d33c6b8c60fb5fde06235fa3e76acd09"],["browserconfig.xml","d3cb44136a6df9ffaf3bb16ff6029c17"],["favicon-16x16.png","9fbb0f466430aa318770be0e902cc783"],["favicon-32x32.png","817ae091de7f6b5cd1d8c814e5cf6559"],["favicon.ico","ec1818c7791c846432008c894dd528ca"],["hero-grid.css","971862ef93b9277950c42098b35a00b4"],["index.html","c0b796027b3ea40ef5e7bb8fb66bc4ec"],["manifest.json","8fe5ba5858927c2ba2e149f3939a118d"],["mstile-150x150.png","9686f63f894dbe775944fe5654436e37"],["safari-pinned-tab.svg","b1ab6984c654ec9f5049535c7b0b0e59"]];
+var precacheConfig = [["192x192.png","fa6d1000c58fa5c708795f53e6ac4f39"],["256x256.png","59ec6fd98e6967af945ca8094d30b735"],["apple-touch-icon.png","74dc788b3b25d54993edd53518b028e5"],["base.css","d33c6b8c60fb5fde06235fa3e76acd09"],["browserconfig.xml","d3cb44136a6df9ffaf3bb16ff6029c17"],["favicon-16x16.png","9fbb0f466430aa318770be0e902cc783"],["favicon-32x32.png","817ae091de7f6b5cd1d8c814e5cf6559"],["favicon.ico","ec1818c7791c846432008c894dd528ca"],["hero-grid.css","971862ef93b9277950c42098b35a00b4"],["index.html","c0b796027b3ea40ef5e7bb8fb66bc4ec"],["manifest.json","8fe5ba5858927c2ba2e149f3939a118d"],["mstile-150x150.png","9686f63f894dbe775944fe5654436e37"],["safari-pinned-tab.svg","b1ab6984c654ec9f5049535c7b0b0e59"]];
 var cacheName = 'sw-precache-v3-sw-precache-' + (self.registration ? self.registration.scope : '');
 
 
