@@ -52,7 +52,7 @@
     <div id="content">
       <div class="top">
         <div class="outputTitle" id="output">Random hero picker</div>
-        <p>Press the buttons below to deselect any heroes you do not want to be randomly picked.</p>
+        <p>Press the buttons below and unselect any heroes you don't want to random.</p>
         <a onclick="doodoo()" id="pick" class="link">random ✔️</a>
       </div>
 
@@ -62,6 +62,7 @@
         <button class="tablinks right" onclick="openTab(event, 'INTELLIGENCE')"><span>Intelligence</span></button>
       </div>
   </section>
+
   <div id="STRENGTH" class="tabcontent">
 
     <section class="hero-grid">
@@ -191,7 +192,9 @@
       <div class="card "><img class="filler tog" id="underlord" onclick="toggle(x, 'underlord')" style="opacity: 1;"
           src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/abyssal_underlord_hphover.png?v=6324670">
       </div>
-
+      <div class="card "><img class="filler tog" id="dawn_breaker" onclick="toggle(x, 'dawn_breaker')" style="opacity: 1;"
+        src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/dawnbreaker_hphover.png?v=6324670">
+    </div>
     </section>
   </div>
 
@@ -323,8 +326,8 @@
       <div class="card "><img class="filler tog" id="arc_warden" onclick="toggle(x, 'arc_warden')" style="opacity: 1;"
           src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/arc_warden_hphover.png?v=6324670">
       </div>
-
-
+      
+      
     </section>
   </div>
 
@@ -476,6 +479,14 @@
 
     </section>
   </div>
+
+  <section class="main-grid">
+    <div></div>
+    <div class="bot">
+        <p>v 1.0.8<a href=""></a></p>
+    </div>
+    <div></div>
+   </section>
 
   <div class="loader-wrapper">
     <span class="loader">
