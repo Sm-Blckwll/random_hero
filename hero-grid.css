@@ -16,9 +16,11 @@
     }
 }
 
+@media screen and (max-width: 1244px){
 .main-grid {
     display: grid;
     gap: 1rem;
     min-height: 100%;
-    grid-template-columns: .005fr .99fr .005fr;
+    grid-template-columns: .01fr .98fr .01fr;
+}
 }
