@@ -1,0 +1,18 @@
+
+
+.hero-grid {
+    display: grid;
+    gap: 1rem;
+
+    grid-template-columns: repeat(auto-fill, minmax(122px, 1fr));
+ }
+
+@media screen and (min-width: 1245px){
+    .main-grid {
+        display: grid;
+        gap: 1rem;
+        min-height: 100%;
+        grid-template-columns: .20fr .60fr .20fr;
+    }
+}
+
