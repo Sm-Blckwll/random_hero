@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Random hero</title>
 
   <style>
@@ -50,21 +50,18 @@
   <section class="main-grid">
     <div></div>
     <div id="content">
+        <div class="cookies"><div class="emoji-small">🍪 </div><div class="cookies-text">This site uses cookies for core functionality only - We do not store any user data.</div><div class="close" onclick="closewindow()">X</div></div>
       <div class="top">
         <div class="outputTitle" id="output">Random hero picker</div>
-        <p>Press the buttons below and unselect any heroes you don't want to random.</p>
+        <p>Press the buttons below to select/unselect all the heroes, or click on the heroes you don't want to random.</p>
         <a onclick="doodoo()" id="pick" class="link">random ✔️</a>
-      </div>
 
+
+      </div>
       <div class="tab">
-        <button class="tablinks left" onclick="openTab(event, 'STRENGTH')"><span>Strength</span></button>
-        <button class="tablinks mid" onclick="openTab(event, 'AGILITY')"><span>Agility</span></button>
-        <button class="tablinks right" onclick="openTab(event, 'INTELLIGENCE')"><span>Intelligence</span></button>
+        <div class="button" onclick="selectAll()"><span>Select All</span></div>
+        <div class="button" onclick="deselectAll()"><span>Deselect All</span></div>
       </div>
-  
-
-  <div id="STRENGTH" class="tabcontent">
-
     <section class="hero-grid">
       <div class="card "><img class="filler tog" id="earthshaker" onclick="toggle(x, 'earthshaker')" style="opacity: 1;"
           src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/earthshaker_hphover.png?v=6324670">
@@ -194,13 +191,10 @@
       </div>
       <div class="card "><img class="filler tog" id="dawn_breaker" onclick="toggle(x, 'dawn_breaker')" style="opacity: 1;"
         src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/dawnbreaker_hphover.png?v=6324670">
-    </div>
-    </section>
-  </div>
-
-  <div id="AGILITY" class="tabcontent">
-
-    <section class="hero-grid">
+      </div>
+      <div class="card "><img class="filler tog" id="primal_beast" onclick="toggle(x, 'primal_beast')" style="opacity: 1;"
+        src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/primal_beast_hphover.png?v=6324670">
+      </div>
       <div class="card "><img class="filler tog" id="antimage" onclick="toggle(x, 'antimage')" style="opacity: 1;"
           src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/antimage_hphover.png?v=6324670">
       </div>
@@ -280,7 +274,6 @@
       <div class="card "><img class="filler tog" id="razor" onclick="toggle(x, 'razor')" style="opacity: 1;"
           src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/razor_hphover.png?v=6324670">
       </div>
-
       <div class="card "><img class="filler tog" id="venomancer" onclick="toggle(x, 'venomancer')" style="opacity: 1;"
           src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/venomancer_hphover.png?v=6324670">
       </div>
@@ -326,14 +319,6 @@
       <div class="card "><img class="filler tog" id="arc_warden" onclick="toggle(x, 'arc_warden')" style="opacity: 1;"
           src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/arc_warden_hphover.png?v=6324670">
       </div>
-      
-      
-    </section>
-  </div>
-
-  <div id="INTELLIGENCE" class="tabcontent">
-
-    <section class="hero-grid">
       <div class="card"><img class="filler tog" id="crystal_maiden" onclick="toggle(x, 'crystal_maiden')"
           style="opacity: 1;"
           src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/crystal_maiden_hphover.png?v=6324670">
@@ -483,52 +468,14 @@
   <section class="main-grid">
     <div></div>
     <div class="bot">
-        <p>v 1.1.3 ✨<a href=""></a></p>
+        <p>v 1.2.5 ✨<a href=""></a></p>
     </div>
     <div></div>
    </section>
-
-  <div class="loader-wrapper">
-    <span class="loader">
-      <span class="loader-inner">
-        <span class="loader-dot"></span>
-      </span>
-    </span>
-
   </div>
-  </div>
-  
+
   <script>
-
-    $(window).on("load", function () {
-      $(".loader-wrapper").fadeOut("slow");
-    });
-
-    window.ondragstart = function() {return false}
-    function openTab(evt, tabName) {
-      var i, tabcontent, tablinks;
-
-      tablinks = document.getElementsByClassName("tablinks");
-      for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      }
-
-      if (document.getElementById(tabName).style.display === "block") {
-        document.getElementById(tabName).style.display = "none";
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-      } else {
-        tabcontent = document.getElementsByClassName("tabcontent");
-        for (i = 0; i < tabcontent.length; i++) {
-          tabcontent[i].style.display = "none";
-        }
-        document.getElementById(tabName).style.display = "block";
-        evt.currentTarget.className += " active";
-      }
-
-    }
-
-    
-    var picked, heroList;
+    var picked, heroList, allHeroList;
     var time = 0;
 
     function doodoo() {
@@ -552,6 +499,32 @@
         document.getElementById(heroName).className += " tog";
       }
     }
+
+    function selectAll() {
+        var allHeroList = document.getElementsByClassName("filler");
+        var cycle = allHeroList.length;
+        for (var i = 0; i < cycle; i++) {
+            if (allHeroList[i].className !== "filler tog"){
+                allHeroList[i].style.opacity = "1"
+                allHeroList[i].className += " tog";
+            }
+        }
+    }
+
+    function deselectAll() {
+        var allHeroList = document.getElementsByClassName("filler");
+        var cycle = allHeroList.length;
+        for (var i = 0; i < cycle; i++) {
+            if (allHeroList[i].style.opacity === "1"){
+                allHeroList[i].style.opacity = ".3"
+                allHeroList[i].className = allHeroList[i].className.replace(" tog", "");
+            }
+        }
+    }
+
+    function closewindow() {
+            $('.cookies').fadeToggle();
+        }
   </script>
   </div>
   </div>
