@@ -1,6 +1,6 @@
 {
-    "name": "Random hero by smblckwll",
-    "short_name": "Random hero",
+    "name": "Random hero gen",
+    "short_name": "Rand Hero",
     "start_url": "index.html",
     "scope": "./",
     "icons": [

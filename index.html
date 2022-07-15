@@ -56,8 +56,8 @@
         <div class="cookies"><div class="emoji-small">🍪 </div><div class="cookies-text">This site uses cookies for core functionality only - We do not store any user data.</div><div class="close" onclick="closewindow()">X</div></div>
       <div class="top">
         <h1 class="outputTitle" id="output">Random hero generator</h1>
-        <h2>Press the buttons below to select/unselect all the heroes, or click on the heroes you don't want to random.</h2>
-        <a onclick="s()" id="pick" class="link">random ✔️</a>
+        <h2>Click on the heroes you don't want to random, or press the buttons below to select/deselect all.</h2>
+        <a onclick="s()" id="pick" class="link">random ✔️</a><span class="error" style="display: none;"><div class="tri"></div>You must select at least one hero. <div class="emoji">😒</div></span>
 
 
       </div>
@@ -471,8 +471,9 @@
   <section class="main-grid">
     <div></div>
     <div class="bot">
+        <h3>Buy me a whiskey? 🥃 <a href="https://www.paypal.com/donate/?hosted_button_id=8VBB7AHDSPTNQ" target="_blank">Donate.</a></h3>
         <p>v 1.2.5 ✨<a href=""></a></p>
-        <p><a href="https://www.dota2.com/home">Dota 2</a> is a registered trademark of Valve Corporation.</p>
+        <p><a href="https://www.dota2.com/home" target="_blank">Dota 2</a> is a registered trademark of Valve Corporation.</p>
     </div>
     <div></div>
    </section>
@@ -489,6 +490,11 @@
         let z = b[Math.floor(Math.random() * b.length + i)];
         t = t + 150;
         toutID = setTimeout(function () { document.getElementById('output').innerHTML = z.id; }, t);
+      }
+      if (b.length == 0){
+        $('.error').fadeToggle();
+        t = t + 1500;
+        toutID = setTimeout(function () { $('.error').fadeToggle(); }, t);
       }
     }
 
