@@ -11,7 +11,12 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     background: #ffffff;
-
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
 }
 
 .cookies {
@@ -59,6 +64,28 @@ body {
   cursor: pointer;
 }
 
+.close:hover {
+  transform: scale(1.3);
+  -webkit-transform: scale(1.3);
+  -moz-transform: scale(1.3);
+  -ms-transform: scale(1.3);
+  -o-transform: scale(1.3);
+  text-shadow: 0 0 5px #FFFFFF;
+}
+
+h2 {
+  color: #73849a;
+  font-size: 1.2em;
+  font-weight: 400;
+    margin-bottom: 1.2em;
+    max-width: 400px;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
 p {
   color: #73849a;
   font-size: 1.2em;
@@ -88,7 +115,6 @@ span {
     border-radius: 4px;
     transition: all 500ms;
     overflow: hidden;
-
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -111,15 +137,13 @@ span {
   margin-bottom: 2rem;
 }
 
-
-
 .link {
   color:royalblue;
   font-size: 1.7rem;
   cursor: pointer;
 }
 
-.filler {
+.f {
   cursor:pointer;
   width: 100%;
   height: 100%;
@@ -134,7 +158,7 @@ span {
   * {
     box-sizing: border-box;
   }
-  /* Style the tab */
+
 .tab {
     overflow: hidden;
     margin-left: 1em;
@@ -142,7 +166,7 @@ span {
     margin: auto;
   }
 
- .outputTitle {
+ h1.outputTitle {
     display: flex;
     justify-content: space-between;
     margin-top: 2rem;
@@ -157,7 +181,7 @@ span {
   }
 
   @media screen and (max-width: 800px){
-    .outputTitle {
+    h1.outputTitle {
       display: flex;
       justify-content: space-between;
       margin-top: 3.3rem;
@@ -172,9 +196,6 @@ span {
     }
   }
 
-
-
-  /* Style the buttons inside the tab */
   .button {
     margin-left: 1em;
     background-color:#eb445a;
@@ -189,30 +210,13 @@ span {
     margin-bottom: 2em;
   }
 
-  /* Change background color of buttons on hover */
   .button:hover {
     background-color: #ec6f7f;
   }
 
-  /* Create an active/current tablink class */
   .button:active {
     background-color:#9e3a47;
   }
-
-  /* Style the tab content */
-  .tabcontent {
-    background-color:#f7f7ff;
-    display: none;
-    width: 100%;
-    padding: 1em 1em 1em 1em;
-    border-radius: 8px;
-    margin-top: 2rem;
-    margin-right: 1em;
-    box-shadow: -1px 1px 25px 1px rgba(0,0,0,0.25);
-    -webkit-box-shadow: -1px 1px 25px 1px rgba(0,0,0,0.25);
-    -moz-box-shadow: -1px 1px 25px 1px rgba(0,0,0,0.25);
-  }
-
 
   .content {
     display: flex;
@@ -221,89 +225,3 @@ span {
     width:100%;
     height:100%;
   }
-  .loader-wrapper {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    background-color: #242f3f;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(269deg, #309e82, #845398);
-    background-size: 400% 400%;
-
-    -webkit-animation: backColour 31s ease infinite;
-    -moz-animation: backColour 31s ease infinite;
-    -o-animation: backColour 31s ease infinite;
-    animation: backColour 31s ease infinite;
-  }
-  .loader {
-    display: inline-block;
-    width: 75px;
-    height: 75px;
-    position: relative;
-    border: -11px solid rgb(255, 255, 255);
-    border-radius: 50%;
-    animation: loader 5s infinite ;
-  }
-
-  .loader-inner {
-    vertical-align: top;
-    display: inline-block;
-    width: 75px;
-    height: 75px;
-    position: relative;
-    border: 11px solid rgb(255, 255, 255);
-    background: linear-gradient(269deg, #309e82, #845398);
-    background-size: 400% 400%;
-
-    -webkit-animation: backColour 31s ease infinite;
-    -moz-animation: backColour 31s ease infinite;
-    -o-animation: backColour 31s ease infinite;
-    animation: backColour 31s ease infinite;
-    border-radius: 50%;
-    animation: loader-inner reverse 5s infinite ;
-  }
-
-
-
-
-
-  @keyframes loader {
-    0% { transform:rotate(0deg);}
-    25% { transform:rotate(180deg);}
-    50% { transform:rotate(0deg);}
-    75% { transform:rotate(360deg);}
-    100% { transform:rotate(0deg);}
-  }
-
-  @keyframes loader-inner {
-    0% { transform:scale(.25,.25);}
-    25% { transform:scale(.75,.75);}
-    50% { transform:scale(.25,.25);}
-    75% { transform:scale(.75,.75);}
-    100% { transform:scale(.25,.25);}
-  }
-
-@-webkit-keyframes backColour {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@-moz-keyframes backColour {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@-o-keyframes backColour {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
-@keyframes backColour {
-    0%{background-position:0% 50%}
-    50%{background-position:100% 50%}
-    100%{background-position:0% 50%}
-}
