@@ -8,8 +8,12 @@
         @import url('./base.css');
         @import url('./hero-grid.css');
     </style>
+    <script src="https://kit.fontawesome.com/b4057baac6.js" crossorigin="anonymous"></script>
 </head>
-
+<button>
+    <i class="fa-solid fa-lightbulb dark-icon"></i>
+    <i class="fa-regular fa-lightbulb light-icon"></i>
+</button>
 <section class="main-grid">
     <div></div>
     <div id="content">
@@ -17,7 +21,8 @@
             <h1 class="outputTitle">About 🧾</h1>
             <h2>This is a Dota 2 Hero Picker. Get random heroes from the ones you would normally select for Dota 2 and
                 quickly generate a random Dota 2 hero!</h2>
-            <a href="https://randomherogenerator.com/" class="link">⬅️ go back</a><span class="error" style="display: none;">
+            <a href="https://randomherogenerator.com/" class="link">⬅️ go back</a><span class="error"
+                style="display: none;">
             </span>
         </div>
     </div>
@@ -32,5 +37,55 @@
     </div>
     <div></div>
 </section>
+<script>
+
+
+    const button = document.querySelector('button');
+    const lightIcon = document.querySelector('.light-icon');
+    const darkIcon = document.querySelector('.dark-icon');
+
+    lightIcon.style.display = 'none';
+    darkIcon.style.display = 'none';
+
+    const mode = localStorage.getItem('mode');
+
+    if (mode === 'dark') {
+        document.documentElement.style.setProperty('--light-text-color', '#fff');
+        document.documentElement.style.setProperty('--light-background-color', '#1f2530');
+        document.documentElement.style.setProperty('--dark-text-color', '#020814');
+        document.documentElement.style.setProperty('--dark-background-color', '#fff');
+        lightIcon.style.display = 'inline-block';
+        darkIcon.style.display = 'none';
+    } else {
+        document.documentElement.style.setProperty('--light-text-color', '#020814');
+        document.documentElement.style.setProperty('--light-background-color', '#fff');
+        document.documentElement.style.setProperty('--dark-text-color', '#fff');
+        document.documentElement.style.setProperty('--dark-background-color', '#1f2530');
+        darkIcon.style.display = 'inline-block';
+        lightIcon.style.display = 'none';
+    }
+
+    button.addEventListener('click', () => {
+        if (lightIcon.style.display === 'none') {
+            localStorage.setItem('mode', 'dark');
+            document.documentElement.style.setProperty('--light-text-color', '#fff');
+            document.documentElement.style.setProperty('--light-background-color', '#1f2530');
+            document.documentElement.style.setProperty('--dark-text-color', '#020814');
+            document.documentElement.style.setProperty('--dark-background-color', '#fff');
+            lightIcon.style.display = 'inline-block';
+            darkIcon.style.display = 'none';
+        } else {
+            localStorage.setItem('mode', 'light');
+            document.documentElement.style.setProperty('--light-text-color', '#020814');
+            document.documentElement.style.setProperty('--light-background-color', '#fff');
+            document.documentElement.style.setProperty('--dark-text-color', '#fff');
+            document.documentElement.style.setProperty('--dark-background-color', '#1f2530');
+            lightIcon.style.display = 'none';
+            darkIcon.style.display = 'inline-block';
+        }
+    });
+
+
+</script>
 
 </html>
