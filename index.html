@@ -64,7 +64,7 @@
 </head>
 
 <body>
-
+        
         <section class="main-grid">
                 <div></div>
                 <div id="content">
@@ -79,6 +79,22 @@
                                 <i class="fa-solid fa-lightbulb dark-icon"></i>
                                 <i class="fa-regular fa-lightbulb light-icon"></i>
                         </button>
+
+
+                        <div id="noads">
+                                <h1>We have no ads!</h1>
+                                <h2>Please consider supporting us so that we don't need to <i>ADd</i> any.</h2>
+                                <div class="emoji-small"></div>
+                                <h3>Buy me a whiskey? 🥃 <a
+                                                href="https://www.paypal.com/donate/?hosted_button_id=8VBB7AHDSPTNQ"
+                                                target="_blank">Donate.</a></h3>
+                                <span class="close-popup" onclick="popup()">X</span>
+                        </div>
+                        <div id="overlay"></div>
+                        
+
+
+
                         <div class="top">
                                 <h1 class="outputTitle" id="output">Random hero generator</h1>
                                 <h2>Click on the heroes you don't want to random, or press the buttons below to
@@ -319,6 +335,11 @@
                                                 style="opacity: 1;"
                                                 src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/morphling_hphover.png?v=6324670"
                                                 alt="A picture of morphling">
+                                </div>
+                                <div class="card "><img class="f d" id="muerta" onclick="k(x, 'muerta')"
+                                                style="opacity: 1;"
+                                                src="https://cdn.cloudflare.steamstatic.com/apps/dota2/images/heroes/muerta_hphover.png?v=6324670"
+                                                alt="A picture of muerta">
                                 </div>
                                 <div class="card "><img class="f d" id="phantom_lancer" onclick="k(x, 'phantom_lancer')"
                                                 style="opacity: 1;"
@@ -775,7 +796,7 @@
                         var t = 0;
                         var b = document.getElementsByClassName("d");
                         for (let i = 0; i < b.length; i++) {
-                                let z = b[Math.floor(Math.random() * b.length + i)];
+                                let z = b[Math.floor(Math.random() * b.length)];
                                 while (z === lh) {
                                         z = b[Math.floor(Math.random() * b.length + i)];
                                 }
@@ -832,6 +853,20 @@
                 function closewindow() {
                         $('.cookies').fadeToggle();
                 }
+
+                function popup() {
+                        $('#noads').fadeToggle();
+                        $('#overlay').fadeToggle();
+                }
+
+                $(document).mousedown(function (e) {
+                        var container = $("#noads");
+
+                        if (!container.is(e.target) && container.has(e.target).length === 0) {
+                                container.fadeOut();
+                                $('#overlay').fadeOut();
+                        }
+                });
         </script>
 </body>
 
