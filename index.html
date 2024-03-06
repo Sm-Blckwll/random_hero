@@ -21,14 +21,40 @@
         <meta name="twitter:title" content="Dota 2 Random Hero Picker - Generate Random Heroes!" />
         <meta name="twitter:image" content="512x512.png" />
 
-        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <!-- Global site tag (gtag.js) - Google Analytics old --
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-ESLRTXBFPE"></script>
         <script>
                 window.dataLayer = window.dataLayer || [];
                 function gtag() { dataLayer.push(arguments); }
                 gtag('js', new Date());
                 gtag('config', 'G-ESLRTXBFPE');
+        </script>-->
+        <script>
+                function loadGoogleAnalytics() {
+                        (function (i, s, o, g, r, a, m) {
+                                i['GoogleAnalyticsObject'] = r;
+                                (i[r] =
+                                        i[r] ||
+                                        function () {
+                                                (i[r].q = i[r].q || []).push(arguments);
+                                        }),
+                                        (i[r].l = 1 * new Date());
+                                (a = s.createElement(o)), (m = s.getElementsByTagName(o)[0]);
+                                a.async = 1;
+                                a.src = g;
+                                m.parentNode.insertBefore(a, m);
+                        })(
+                                window,
+                                document,
+                                'script',
+                                'https://www.google-analytics.com/analytics.js',
+                                'ga'
+                        );
+
+                        ga('create', 'G-ESLRTXBFPE', 'auto');
+                }
         </script>
+
         <style>
                 @import url('./base.css');
                 @import url('./hero-grid.css');
@@ -64,15 +90,14 @@
 </head>
 
 <body>
-        
+
         <section class="main-grid">
                 <div></div>
                 <div id="content">
                         <div class="cookies">
                                 <div class="emoji-small">🍪 </div>
-                                <div class="cookies-text">This site uses cookies for core functionality only - We do not
-                                        store any user
-                                        data.</div>
+                                <div class="cookies-text">We use Google Analytics to gather insights on site usage. By
+                                        continuing to use the site you agree to the collection of analytics data.</div>
                                 <div class="close" onclick="closewindow()">X</div>
                         </div>
                         <button>
@@ -83,15 +108,15 @@
 
                         <div id="noads">
                                 <h1>We have no ads!</h1>
-                                <h2>Please consider supporting us so that we don't need to <i>ADd</i> any.</h2>
+                                <h2>Please consider supporting us so that we don't need to <i>ADd</i> any. 👉👈</h2>
                                 <div class="emoji-small"></div>
-                                <h3>Buy me a whiskey? 🥃 <a
+                                <div class="button dona" id="dona"><a
                                                 href="https://www.paypal.com/donate/?hosted_button_id=8VBB7AHDSPTNQ"
-                                                target="_blank">Donate.</a></h3>
+                                                target="_blank">Donate?</a></div>
                                 <span class="close-popup" onclick="popup()">X</span>
                         </div>
                         <div id="overlay"></div>
-                        
+
 
 
 
@@ -100,7 +125,7 @@
                                 <h2>Click on the heroes you don't want to random, or press the buttons below to
                                         select/deselect all.
                                 </h2>
-                                <a onclick="s()" id="pick" class="link">random ✔️</a><span class="error"
+                                <a onclick="s()" id="pick" class="link">random 🤠</a><span class="error"
                                         style="display: none;">
                                         <div class="tri"></div>You must select at least one hero. <div class="emoji">😒
                                         </div>
@@ -867,6 +892,22 @@
                                 $('#overlay').fadeOut();
                         }
                 });
+
+                $("#dona").click(function () {
+                        window.open("https://www.paypal.com/donate/?hosted_button_id=8VBB7AHDSPTNQ");
+                });
+        </script>
+        <script>
+                //Minimum time in milliseconds before loading Google Analytics
+                var minimumTimeBeforeGA = 30000; // 30 seconds
+
+                function checkAndLoadGA() {
+                        if (performance && performance.now() >= minimumTimeBeforeGA) {
+                                loadGoogleAnalytics();
+                        }
+                }
+
+                setTimeout(checkAndLoadGA, minimumTimeBeforeGA);
         </script>
 </body>
 
